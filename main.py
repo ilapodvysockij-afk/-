@@ -26,7 +26,7 @@ class Cat(Animal):
 
 
 my_dog = Dog("Рекс", "Вівчарка")
-my_cat = Cat("Мурчик", "Рудий")
+my_cat = Cat("Мурчик", "Рижий")
 
 print(f"Собака {my_dog.name} ({my_dog.breed}) каже: {my_dog.make_sound()}")
 print(f"Кіт {my_cat.name} ({my_cat.color}) каже: {my_cat.make_sound()}")
