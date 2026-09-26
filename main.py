@@ -15,7 +15,6 @@ class Dog(Animal):
         return "Гав!"
 
 
-# Підклас Кіт
 class Cat(Animal):
     def __init__(self, name, color):
         super().__init__(name)
