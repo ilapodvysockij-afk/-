@@ -1,32 +1,19 @@
-class Animal:
-    def __init__(self, name):
-        self.name = name
+class IterableGenerator:
 
-    def make_sound(self):
-        return "Якийсь звук"
+    def __init__(self, limit):
+        self.limit = limit
 
+    def __iter__(self):
+        current = 0
+        while current < self.limit:
+            yield current
+            current += 1
 
-class Dog(Animal):
-    def __init__(self, name, breed):
-        super().__init__(name)
-        self.breed = breed
+my_iterable = IterableGenerator(5)
 
-    def make_sound(self):
-        return "Гав!"
+generator_object = iter(my_iterable)
+print(f"Тип повернутого об'єкта: {type(generator_object)}")
 
-
-class Cat(Animal):
-    def __init__(self, name, color):
-        super().__init__(name)
-        self.color = color
-
-    def make_sound(self):
-        return "Мяу!"
-
-
-
-my_dog = Dog("Рекс", "Вівчарка")
-my_cat = Cat("Мурчик", "Рижий")
-
-print(f"Собака {my_dog.name} ({my_dog.breed}) каже: {my_dog.make_sound()}")
-print(f"Кіт {my_cat.name} ({my_cat.color}) каже: {my_cat.make_sound()}")
+print("Елементи генератора:")
+for number in my_iterable:
+    print(number)
